@@ -35,10 +35,15 @@ adresy = nacti_soubor("adresy.geojson")
 #print(adresy)
 
 for b in adresy:
+    id_adr = b["id"]
+    
     b["geometry"]["coordinates_jtsk"] = list(prevod_souradnic(*b["geometry"]["coordinates"]))
     x1 = b["geometry"]["coordinates_jtsk"][0]
     y1 = b["geometry"]["coordinates_jtsk"][1]
-    print(x1,y1)
+
+    print(id_adr,x1,y1)
+    
+
     
 
 
