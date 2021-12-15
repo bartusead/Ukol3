@@ -53,11 +53,19 @@ for b in adresy:
         if vzdalenost < vzdalenost_min:
             vzdalenost_min = vzdalenost
     #print(vzdalenost_min)
+    soucet_vzdalenosti += vzdalenost_min
     vzdalenosti.append(vzdalenost_min)
     vzdalenost_min = 100000
 
 
-print(vzdalenosti)
+#print(vzdalenosti)
+avg_vzdalenost = soucet_vzdalenosti/len(vzdalenosti) 
+
+print(f"Načteno celkem {len(vzdalenosti)} adresních bodů.")
+print(f"Načteno celkem {len(verejne_kont)} veřejných kontejnerů na tříděný odpad.")
+print()
+print(f"Průměrná vzdálenost z adresního bodu k nejblžšímu kontejneru je {avg_vzdalenost} metrů.")
+
         
     
 
