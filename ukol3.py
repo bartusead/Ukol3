@@ -1,5 +1,6 @@
 import json
 from pyproj import Transformer
+from math import sqrt
 
 ADRESY = "adresy.geojson"
 KONTEJNERY = "kontejnery.geojson"
@@ -18,11 +19,17 @@ for a in kontejnery:
 
 print(type(verejne_kont))
 print(len(verejne_kont))
+print(verejne_kont)
 
 
-"""def prevod_souradnic(x,y):
+def prevod_souradnic(x,y):
     wgs2jtsk = Transformer.from_crs(4326,5514)
-    return wgs2jtsk.transform(x,y)"""
+    return wgs2jtsk.transform(x,y)
+
+def vzdalenost(x1,y1,x2,y2):
+    return sqrt((x2-x1)**2 + (y2-y1)**2)
+
+
 
 
 
