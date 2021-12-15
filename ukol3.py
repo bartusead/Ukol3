@@ -17,9 +17,9 @@ for a in kontejnery:
     if a['properties']['PRISTUP'] == 'volně':
         verejne_kont.append(a)
 
-print(type(verejne_kont))
+"""print(type(verejne_kont))
 print(len(verejne_kont))
-print(verejne_kont)
+print(verejne_kont)"""
 
 
 def prevod_souradnic(x,y):
@@ -28,6 +28,11 @@ def prevod_souradnic(x,y):
 
 def vzdalenost(x1,y1,x2,y2):
     return sqrt((x2-x1)**2 + (y2-y1)**2)
+
+adresy = nacti_soubor("adresy.geojson")
+
+print(type(adresy))
+print(adresy)
 
 
 
