@@ -18,6 +18,7 @@ def nacti_soubor(nazev):
         quit()
     except JSONDecodeError:
         print(f"Soubor {nazev} je neplatný (není platný JSON)!")
+        quit()
     
 
 
