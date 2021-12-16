@@ -1,4 +1,5 @@
 import json
+from json.decoder import JSONDecodeError
 from pyproj import Transformer
 from math import sqrt
 
@@ -14,6 +15,9 @@ def nacti_soubor(nazev):
         quit()
     except PermissionError:
         print(f"K otevření souboru {nazev} nemám patřičná oprávnění!")
+        quit()
+    except JSONDecodeError:
+        print(f"Soubor {nazev} je neplatný (není platný JSON)!")
     
 
 
@@ -33,8 +37,7 @@ def spocti_vzdalenost(x1,y1,x2,y2):
 
 adresy = nacti_soubor("adresy.geojson")
 
-#print(type(adresy))
-#print(adresy)
+
 MAX_VZDALENOST = 10000
 vzdalenost_min = 100000
 vzdalenost_max = 0
