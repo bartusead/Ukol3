@@ -35,6 +35,7 @@ adresy = nacti_soubor("adresy.geojson")
 #print(adresy)
 
 vzdalenost_min = 100000
+vzdalenost_max = 0
 soucet_vzdalenosti = 0
 vzdalenosti = []
 for b in adresy:
@@ -43,28 +44,38 @@ for b in adresy:
     b["geometry"]["coordinates_jtsk"] = list(preved_souradnice(*b["geometry"]["coordinates"]))
     x1 = b["geometry"]["coordinates_jtsk"][0]
     y1 = b["geometry"]["coordinates_jtsk"][1]
-    #print(b["properties"]["addr:street"])
+
     for c in verejne_kont:
         x2 = c["geometry"]["coordinates"][0]
         y2 = c["geometry"]["coordinates"][1]
-        #print(c["properties"]["STATIONNAME"])
+
         vzdalenost = spocti_vzdalenost(x1,y1,x2,y2)
-        #print(vzdalenost)
         if vzdalenost < vzdalenost_min:
             vzdalenost_min = vzdalenost
-    #print(vzdalenost_min)
+    
+    if vzdalenost_min > vzdalenost_max:
+        vzdalenost_max = vzdalenost_min
+        ulice_max = b["properties"]["addr:street"]
+        cislo_max = b["properties"]["addr:housenumber"]
+    print(vzdalenost_min)
+    print(vzdalenost_max)
     soucet_vzdalenosti += vzdalenost_min
     vzdalenosti.append(vzdalenost_min)
     vzdalenost_min = 100000
-
-
-#print(vzdalenosti)
+    
 avg_vzdalenost = soucet_vzdalenosti/len(vzdalenosti) 
+
+
+for d in vzdalenosti:
+    if d > vzdalenost_max:
+        vzdalenost_max = d
+    
 
 print(f"Načteno celkem {len(vzdalenosti)} adresních bodů.")
 print(f"Načteno celkem {len(verejne_kont)} veřejných kontejnerů na tříděný odpad.")
 print()
-print(f"Průměrná vzdálenost z adresního bodu k nejblžšímu kontejneru je {avg_vzdalenost} metrů.")
+print(f"Průměrná vzdálenost z adresního bodu k nejblžšímu kontejneru je {avg_vzdalenost:.0f} metrů.")
+print(f"Maximální vzdálenost k nejbližšímu kontejneru je z adresy {ulice_max} {cislo_max}, a to {vzdalenost_max:.0f} metrů.")
 
         
     
