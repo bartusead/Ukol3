@@ -6,8 +6,15 @@ ADRESY = "adresy.geojson"
 KONTEJNERY = "kontejnery.geojson"
 
 def nacti_soubor(nazev):
-    with open(nazev, "r", encoding="utf8") as infile:
-        return json.load(infile)["features"]
+    try:
+        with open(nazev, "r", encoding="utf8") as infile:
+            return json.load(infile)["features"]
+    except FileNotFoundError:
+        print(f"Soubor {nazev} neexistuje, nebo je chybně zadáno jeho umístění!")
+        quit()
+    except PermissionError:
+        print(f"K otevření souboru {nazev} nemám patřičná oprávnění!")
+    
 
 
 kontejnery = nacti_soubor("kontejnery.geojson")
@@ -16,11 +23,6 @@ verejne_kont = []
 for a in kontejnery:
     if a['properties']['PRISTUP'] == 'volně':
         verejne_kont.append(a)
-
-"""print(type(verejne_kont))
-print(len(verejne_kont))
-print(verejne_kont)"""
-
 
 def preved_souradnice(x,y):
     wgs2jtsk = Transformer.from_crs(4326,5514)
