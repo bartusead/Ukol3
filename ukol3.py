@@ -5,6 +5,7 @@ from math import sqrt
 
 ADRESY = "adresy.geojson"
 KONTEJNERY = "kontejnery.geojson"
+MAX_VZDALENOST = 10000
 
 def nacti_soubor(nazev):
     try:
@@ -17,43 +18,36 @@ def nacti_soubor(nazev):
         print(f"K otevření souboru {nazev} nemám patřičná oprávnění!")
         quit()
     except JSONDecodeError:
-        print(f"Soubor {nazev} je neplatný (není platný JSON)!")
+        print(f"Soubor {nazev} je neplatný (není platný JSON), prázdný, nebo chybí některý z parametrů!")
         quit()
-    
 
+def spocti_vzdalenost(x1,y1,x2,y2):
+    return sqrt((x2-x1)**2 + (y2-y1)**2)    
 
 kontejnery = nacti_soubor("kontejnery.geojson")
 
 verejne_kont = []
-for a in kontejnery:
-    if a['properties']['PRISTUP'] == 'volně':
-        verejne_kont.append(a)
-
-def preved_souradnice(x,y):
-    wgs2jtsk = Transformer.from_crs(4326,5514)
-    return wgs2jtsk.transform(y,x)
-
-def spocti_vzdalenost(x1,y1,x2,y2):
-    return sqrt((x2-x1)**2 + (y2-y1)**2)
+for kontejner in kontejnery:
+    if kontejner['properties']['PRISTUP'] == 'volně':
+        verejne_kont.append(kontejner)
 
 adresy = nacti_soubor("adresy.geojson")
 
-
-MAX_VZDALENOST = 10000
-vzdalenost_min = 100000
+wgs2jtsk = Transformer.from_crs(4326,5514)
 vzdalenost_max = 0
 soucet_vzdalenosti = 0
 vzdalenosti = []
-for b in adresy:
-    ulice = b["properties"]["addr:street"]
-    cislo_popisne = b["properties"]["addr:housenumber"]    
-    b["geometry"]["coordinates_jtsk"] = list(preved_souradnice(*b["geometry"]["coordinates"]))
-    x1 = b["geometry"]["coordinates_jtsk"][0]
-    y1 = b["geometry"]["coordinates_jtsk"][1]
+for bod in adresy:
+    vzdalenost_min = float('inf')
+    ulice = bod["properties"]["addr:street"]
+    cislo_popisne = bod["properties"]["addr:housenumber"]    
+    bod["geometry"]["coordinates_jtsk"] = list(wgs2jtsk.transform(bod["geometry"]["coordinates"][1],bod["geometry"]["coordinates"][0]))
+    x1 = bod["geometry"]["coordinates_jtsk"][0]
+    y1 = bod["geometry"]["coordinates_jtsk"][1]
 
-    for c in verejne_kont:
-        x2 = c["geometry"]["coordinates"][0]
-        y2 = c["geometry"]["coordinates"][1]
+    for misto in verejne_kont:
+        x2 = misto["geometry"]["coordinates"][0]
+        y2 = misto["geometry"]["coordinates"][1]
 
         vzdalenost = spocti_vzdalenost(x1,y1,x2,y2)
         if vzdalenost < vzdalenost_min:
@@ -61,17 +55,16 @@ for b in adresy:
     
     if vzdalenost_min > MAX_VZDALENOST:
         print(f"Z adresy {ulice} {cislo_popisne} je njebližší kontejner dále než 10 km.")
-        quit()
+        #quit()
 
     if vzdalenost_min > vzdalenost_max:
         vzdalenost_max = vzdalenost_min
-        ulice_max = b["properties"]["addr:street"]
-        cislo_max = b["properties"]["addr:housenumber"]
+        ulice_max = bod["properties"]["addr:street"]
+        cislo_max = bod["properties"]["addr:housenumber"]
 
     soucet_vzdalenosti += vzdalenost_min
     vzdalenosti.append(vzdalenost_min)
-    vzdalenost_min = 100000
-    
+
 avg_vzdalenost = soucet_vzdalenosti/len(vzdalenosti) 
 
 print(f"Načteno celkem {len(vzdalenosti)} adresních bodů.")
