@@ -32,6 +32,10 @@ for kontejner in kontejnery:
     if kontejner['properties']['PRISTUP'] == 'volně':
         verejne_kont.append(kontejner)
 
+vsechny_kont = []
+for kontak in kontejnery:
+    vsechny_kont.append(kontak)
+
 adresy = nacti_soubor("adresy.geojson")
 
 wgs2jtsk = Transformer.from_crs(4326,5514)
@@ -46,17 +50,25 @@ for bod in adresy:
     x1 = bod["geometry"]["coordinates_jtsk"][0]
     y1 = bod["geometry"]["coordinates_jtsk"][1]
 
-    for misto in verejne_kont:
+    for misto in vsechny_kont:
+        adresa_kont = bod["properties"]["addr:street"] + " " + bod["properties"]["addr:housenumber"]
         x2 = misto["geometry"]["coordinates"][0]
         y2 = misto["geometry"]["coordinates"][1]
+        
+        #Pokud je adresa kontejneru shodná s adresou adresního bodu, stanoví vzdálenost jako 0
+        if misto['properties']['PRISTUP'] == 'obyvatelům domu' and misto['properties']['STATIONNAME'] == adresa_kont:
+            vzdalenost = 0
+        elif misto['properties']['PRISTUP'] == 'obyvatelům domu' and misto['properties']['STATIONNAME'] != adresa_kont:
+            continue
+        else:
+            vzdalenost = spocti_vzdalenost(x1,y1,x2,y2)
 
-        vzdalenost = spocti_vzdalenost(x1,y1,x2,y2)
         if vzdalenost < vzdalenost_min:
             vzdalenost_min = vzdalenost
     
     if vzdalenost_min > MAX_VZDALENOST:
         print(f"Z adresy {ulice} {cislo_popisne} je njebližší kontejner dále než 10 km.")
-        #quit()
+        quit()
 
     if vzdalenost_min > vzdalenost_max:
         vzdalenost_max = vzdalenost_min
@@ -70,11 +82,11 @@ avg_vzdalenost = soucet_vzdalenosti/len(vzdalenosti)
 vzdalenosti_median = median(vzdalenosti)
 
 print(f"Načteno celkem {len(vzdalenosti)} adresních bodů.")
-print(f"Načteno celkem {len(verejne_kont)} veřejných kontejnerů na tříděný odpad.")
+print(f"Načteno celkem {len(vsechny_kont)} kontejnerů na tříděný odpad, z toho celkem {len(verejne_kont)} veřejných.")
 print()
 print(f"Průměrná vzdálenost z adresního bodu k nejblžšímu kontejneru je {avg_vzdalenost:.0f} metrů.")
 print(f"Maximální vzdálenost k nejbližšímu kontejneru je z adresy {ulice_max} {cislo_max}, a to {vzdalenost_max:.0f} metrů.")
-print(f"Medián vzdáleností k nejbližšímu kontejneru je {vzdalenosti_median:.0f} metrů. ")
+print(f"Medián vzdáleností k nejbližšímu kontejneru je {vzdalenosti_median} metrů. ")
 
         
     
