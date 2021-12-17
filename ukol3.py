@@ -2,6 +2,7 @@ import json
 from json.decoder import JSONDecodeError
 from pyproj import Transformer
 from math import sqrt
+from statistics import median
 
 ADRESY = "adresy.geojson"
 KONTEJNERY = "kontejnery.geojson"
@@ -66,12 +67,14 @@ for bod in adresy:
     vzdalenosti.append(vzdalenost_min)
 
 avg_vzdalenost = soucet_vzdalenosti/len(vzdalenosti) 
+vzdalenosti_median = median(vzdalenosti)
 
 print(f"Načteno celkem {len(vzdalenosti)} adresních bodů.")
 print(f"Načteno celkem {len(verejne_kont)} veřejných kontejnerů na tříděný odpad.")
 print()
 print(f"Průměrná vzdálenost z adresního bodu k nejblžšímu kontejneru je {avg_vzdalenost:.0f} metrů.")
 print(f"Maximální vzdálenost k nejbližšímu kontejneru je z adresy {ulice_max} {cislo_max}, a to {vzdalenost_max:.0f} metrů.")
+print(f"Medián vzdáleností k nejbližšímu kontejneru je {vzdalenosti_median:.0f} metrů. ")
 
         
     
