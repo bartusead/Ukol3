@@ -33,14 +33,11 @@ def spocti_vzdalenost(x1,y1,x2,y2):
 #Vytvoření seznamu veřejných kontejnerů
 kontejnery = nacti_soubor("kontejnery.geojson")
 verejne_kont = []
+vsechny_kont = []
 for kontejner in kontejnery:
+    vsechny_kont.append(kontejner)
     if kontejner['properties']['PRISTUP'] == 'volně':
         verejne_kont.append(kontejner)
-
-#Vytvoření seznamu všech kontejnerů
-vsechny_kont = []
-for kontak in kontejnery:
-    vsechny_kont.append(kontak)
 
 #Vytvoření seznamu minimálních vzdáleností
 adresy = nacti_soubor("adresy.geojson")
