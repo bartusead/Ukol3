@@ -1,0 +1,553 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-ide",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2021-11-30T09:38:39Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/296621727",
+        "addr:conscriptionnumber": "625",
+        "addr:housenumber": "625/30",
+        "addr:postcode": "18100",
+        "addr:street": "Sopotská",
+        "addr:streetnumber": "30",
+        "source:addr": "uir_adr",
+        "uir_adr:ADRESA_KOD": "22322523"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.4268592,
+          50.1289416
+        ]
+      },
+      "id": "node/296621727"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/296678077",
+        "addr:conscriptionnumber": "540",
+        "addr:housenumber": "540/21",
+        "addr:postcode": "18100",
+        "addr:street": "Feřtekova",
+        "addr:streetnumber": "21",
+        "source:addr": "uir_adr",
+        "uir_adr:ADRESA_KOD": "22321586"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.4091362,
+          50.1322437
+        ]
+      },
+      "id": "node/296678077"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/296622135",
+        "addr:conscriptionnumber": "51",
+        "addr:housenumber": "51/64",
+        "addr:postcode": "18100",
+        "addr:street": "V Zámcích",
+        "addr:streetnumber": "64",
+        "source:addr": "uir_adr",
+        "uir_adr:ADRESA_KOD": "22316281"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.3977769,
+          50.1397778
+        ]
+      },
+      "id": "node/296622135"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/296622408",
+        "addr:conscriptionnumber": "158",
+        "addr:housenumber": "158/43",
+        "addr:postcode": "18100",
+        "addr:street": "Bohnická",
+        "addr:streetnumber": "43",
+        "source:addr": "uir_adr",
+        "uir_adr:ADRESA_KOD": "22317465"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.4146961,
+          50.1354224
+        ]
+      },
+      "id": "node/296622408"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/296622694",
+        "addr:conscriptionnumber": "65",
+        "addr:housenumber": "65/20",
+        "addr:postcode": "18100",
+        "addr:street": "V Zámcích",
+        "addr:streetnumber": "20",
+        "source:addr": "uir_adr",
+        "uir_adr:ADRESA_KOD": "22316442"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.3949171,
+          50.1348773
+        ]
+      },
+      "id": "node/296622694"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/296622780",
+        "addr:conscriptionnumber": "448",
+        "addr:housenumber": "448/26",
+        "addr:postcode": "18100",
+        "addr:street": "Poznaňská",
+        "addr:streetnumber": "26",
+        "source:addr": "uir_adr",
+        "uir_adr:ADRESA_KOD": "22320571"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.4215451,
+          50.1300111
+        ]
+      },
+      "id": "node/296622780"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/296622912",
+        "addr:conscriptionnumber": "146",
+        "addr:housenumber": "146/31",
+        "addr:postcode": "18100",
+        "addr:street": "U Pazderek",
+        "addr:streetnumber": "31",
+        "source:addr": "uir_adr",
+        "uir_adr:ADRESA_KOD": "22317295"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.4156676,
+          50.1316784
+        ]
+      },
+      "id": "node/296622912"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/296623182",
+        "addr:conscriptionnumber": "352",
+        "addr:housenumber": "352/39",
+        "addr:postcode": "18100",
+        "addr:street": "Štětínská",
+        "addr:streetnumber": "39",
+        "source:addr": "uir_adr",
+        "uir_adr:ADRESA_KOD": "22319620"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.4284936,
+          50.130199
+        ]
+      },
+      "id": "node/296623182"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/296624517",
+        "addr:conscriptionnumber": "527",
+        "addr:housenumber": "527/36",
+        "addr:postcode": "18100",
+        "addr:street": "Dolákova",
+        "addr:streetnumber": "36",
+        "source:addr": "uir_adr",
+        "uir_adr:ADRESA_KOD": "22321420"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.4109125,
+          50.1335083
+        ]
+      },
+      "id": "node/296624517"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/296624805",
+        "addr:conscriptionnumber": "369",
+        "addr:housenumber": "369/5",
+        "addr:postcode": "18100",
+        "addr:street": "Štětínská",
+        "addr:streetnumber": "5",
+        "source:addr": "uir_adr",
+        "uir_adr:ADRESA_KOD": "22319794"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.4256303,
+          50.130318
+        ]
+      },
+      "id": "node/296624805"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/296625021",
+        "addr:conscriptionnumber": "642",
+        "addr:housenumber": "642/64",
+        "addr:postcode": "18100",
+        "addr:street": "Sopotská",
+        "addr:streetnumber": "64",
+        "source:addr": "uir_adr",
+        "uir_adr:ADRESA_KOD": "22322698"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.4284033,
+          50.1288574
+        ]
+      },
+      "id": "node/296625021"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/296625633",
+        "addr:conscriptionnumber": "659",
+        "addr:housenumber": "659/10",
+        "addr:postcode": "18100",
+        "addr:street": "Gdaňská",
+        "addr:streetnumber": "10",
+        "source:addr": "uir_adr",
+        "uir_adr:ADRESA_KOD": "22322868"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.430227,
+          50.1289054
+        ]
+      },
+      "id": "node/296625633"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/296626164",
+        "addr:conscriptionnumber": "236",
+        "addr:housenumber": "236/8",
+        "addr:postcode": "18100",
+        "addr:street": "K Farkám",
+        "addr:streetnumber": "8",
+        "source:addr": "uir_adr",
+        "uir_adr:ADRESA_KOD": "22318348"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.4141211,
+          50.1322404
+        ]
+      },
+      "id": "node/296626164"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/296626366",
+        "addr:conscriptionnumber": "771",
+        "addr:housenumber": "771/2",
+        "addr:postcode": "18100",
+        "addr:street": "Podhajská pole",
+        "addr:streetnumber": "2",
+        "source:addr": "uir_adr",
+        "uir_adr:ADRESA_KOD": "22323988"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.4323014,
+          50.1303837
+        ]
+      },
+      "id": "node/296626366"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/296626543",
+        "addr:conscriptionnumber": "729",
+        "addr:housenumber": "729/9",
+        "addr:postcode": "18100",
+        "addr:street": "Eledrova",
+        "addr:streetnumber": "9",
+        "source:addr": "uir_adr",
+        "uir_adr:ADRESA_KOD": "22323562"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.4036925,
+          50.1317524
+        ]
+      },
+      "id": "node/296626543"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/296626936",
+        "addr:conscriptionnumber": "540",
+        "addr:housenumber": "540/18",
+        "addr:postcode": "18100",
+        "addr:street": "Hanouškova",
+        "addr:streetnumber": "18",
+        "source:addr": "uir_adr",
+        "uir_adr:ADRESA_KOD": "22321594"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.4091052,
+          50.1323227
+        ]
+      },
+      "id": "node/296626936"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/296627002",
+        "addr:conscriptionnumber": "336",
+        "addr:housenumber": "336/21",
+        "addr:postcode": "18100",
+        "addr:street": "Gdaňská",
+        "addr:streetnumber": "21",
+        "source:addr": "uir_adr",
+        "uir_adr:ADRESA_KOD": "22319450"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.429851,
+          50.1302555
+        ]
+      },
+      "id": "node/296627002"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/296627433",
+        "addr:conscriptionnumber": "40",
+        "addr:housenumber": "40/21",
+        "addr:postcode": "18100",
+        "addr:street": "Bohnická",
+        "addr:streetnumber": "21",
+        "source:addr": "uir_adr",
+        "uir_adr:ADRESA_KOD": "22316191"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.4127041,
+          50.1356908
+        ]
+      },
+      "id": "node/296627433"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/296627507",
+        "addr:conscriptionnumber": "173",
+        "addr:housenumber": "173/21",
+        "addr:postcode": "18100",
+        "addr:street": "U Pazderek",
+        "addr:streetnumber": "21",
+        "source:addr": "uir_adr",
+        "uir_adr:ADRESA_KOD": "22317643"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.4144162,
+          50.1317855
+        ]
+      },
+      "id": "node/296627507"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/296628229",
+        "addr:conscriptionnumber": "362",
+        "addr:housenumber": "362/19",
+        "addr:postcode": "18100",
+        "addr:street": "Štětínská",
+        "addr:streetnumber": "19",
+        "source:addr": "uir_adr",
+        "uir_adr:ADRESA_KOD": "22319727"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.4268071,
+          50.130295
+        ]
+      },
+      "id": "node/296628229"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/296628561",
+        "addr:conscriptionnumber": "248",
+        "addr:housenumber": "248/8",
+        "addr:postcode": "18100",
+        "addr:street": "Nad Pentlovkou",
+        "addr:streetnumber": "8",
+        "source:addr": "uir_adr",
+        "uir_adr:ADRESA_KOD": "22318518"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.4129248,
+          50.1325519
+        ]
+      },
+      "id": "node/296628561"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/296629157",
+        "addr:conscriptionnumber": "319",
+        "addr:housenumber": "319",
+        "addr:postcode": "18200",
+        "addr:street": "Čimická",
+        "source:addr": "uir_adr",
+        "uir_adr:ADRESA_KOD": "22319280"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.4192735,
+          50.1391038
+        ]
+      },
+      "id": "node/296629157"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/296629214",
+        "addr:conscriptionnumber": "181",
+        "addr:housenumber": "181/10",
+        "addr:postcode": "18100",
+        "addr:street": "Ústavní",
+        "addr:streetnumber": "10",
+        "source:addr": "uir_adr",
+        "uir_adr:ADRESA_KOD": "22317741"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.4182369,
+          50.1333942
+        ]
+      },
+      "id": "node/296629214"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/296629758",
+        "addr:conscriptionnumber": "23",
+        "addr:housenumber": "23/1",
+        "addr:postcode": "18100",
+        "addr:street": "Bohnická",
+        "addr:streetnumber": "1",
+        "source:addr": "uir_adr",
+        "uir_adr:ADRESA_KOD": "22316027"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.4091418,
+          50.1357748
+        ]
+      },
+      "id": "node/296629758"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/296631185",
+        "addr:conscriptionnumber": "600",
+        "addr:housenumber": "600/2",
+        "addr:postcode": "18100",
+        "addr:street": "Ústavní",
+        "addr:streetnumber": "2",
+        "source:addr": "uir_adr",
+        "uir_adr:ADRESA_KOD": "22322272"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.416471,
+          50.1334648
+        ]
+      },
+      "id": "node/296631185"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9104675454",
+        "addr:conscriptionnumber": "853",
+        "addr:housenumber": "853/3a",
+        "addr:place": "Bohnice",
+        "addr:postcode": "18100",
+        "addr:street": "Dolákova",
+        "addr:streetnumber": "3a",
+        "ref:ruian:addr": "82088837"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.4081279,
+          50.1341491
+        ]
+      },
+      "id": "node/9104675454"
+    }
+  ]
+}
