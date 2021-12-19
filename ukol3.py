@@ -97,7 +97,11 @@ for bod in adresy:
     vzdalenosti.append(vzdalenost_min)
 
 #Konečné výpočty a výpisy do konzole
-avg_vzdalenost = soucet_vzdalenosti/len(vzdalenosti) 
+try:
+    avg_vzdalenost = soucet_vzdalenosti/len(vzdalenosti) 
+except ZeroDivisionError:
+    print("Nebyla spočtena žádná minimální vzdálenost!")
+    quit()
 vzdalenosti_median = median(vzdalenosti)
 
 print(f"Načteno celkem {len(vzdalenosti)} adresních bodů.")
